@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>HotelResarvation</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>宿泊予約アプリ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <header>
+    <nav class="navbar Navbar">
+      <div class="container-fluid">
+        <a href="/"><img class="Navbar__logo" alt="サイトロゴ" src="https://rails-02-sample.herokuapp.com/assets/common/logo.png" /></a>
+
+        <ul class="navbar-nav flex-row align-items-center">
+          <% if user_signed_in? %>
+            <li class="nav-item NavItem">
+              <div class="header-user-info">
+                <%= image_tag current_user.icon.present? ? current_user.icon.url : 'https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png', class: 'user-icon' %>
+                <%= current_user.name %>
+                <div class="dropdown-menu" aria-labelledby="dropdown-button" date-bs-popper="none">
+                  <%= link_to '施設の新規登録', new_room_path %>
+                  <hr class="DropdownMenu__hr">
+                  <%= link_to 'プロフィール', user_path(current_user) %>
+                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, rel: 'nofollow' %>
+                </div>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item NavItem">
+              <a class="fw-bold NavItem__link NavItem__link--login" href="/users/sign_in">ログイン</a>
+              <a class="btn fw-bold NavItem__link NavItem__link--register" href="/users/sign_up">新規登録</a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
-  </body>
+  </main>
+</body>
 </html>
