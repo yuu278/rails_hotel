@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'profiles/edit'
-  get 'profiles/update'
   get 'home/index'
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   root "home#index"
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
   resource :profile, only: [:edit, :update]
   resources :rooms do
     collection do

@@ -20,10 +20,9 @@
           <% if user_signed_in? %>
             <li class="nav-item NavItem">
               <div class="header-user-info">
-                <%= image_tag current_user.icon.present? ? current_user.icon.url : 'https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png', class: 'user-icon' %>
-                <%= current_user.name %>
+              <%= image_tag "icon_image.png", alt: "アイコン画像", class: "user-image" %>               
+              <%= current_user.name %>
                 <div class="dropdown-menu" aria-labelledby="dropdown-button" date-bs-popper="none">
-                  <%= link_to '施設の新規登録', new_room_path %>
                   <hr class="DropdownMenu__hr">
                   <%= link_to 'プロフィール', user_path(current_user) %>
                   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, rel: 'nofollow' %>
