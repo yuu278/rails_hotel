@@ -23,6 +23,7 @@
               <%= image_tag "icon_image.png", alt: "アイコン画像", class: "user-image" %>               
               <%= current_user.name %>
                 <div class="dropdown-menu" aria-labelledby="dropdown-button" date-bs-popper="none">
+                  <%= link_to '施設登録', new_room_path %>
                   <hr class="DropdownMenu__hr">
                   <%= link_to 'プロフィール', user_path(current_user) %>
                   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, rel: 'nofollow' %>
