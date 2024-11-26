@@ -1,15 +1,84 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+    margin: 0;
+  }
+  
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #1c1d3b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+}
+  
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+  
+.Navbar__logo {
+    width: 221px;
+    margin-right: auto;
+    padding-left: 30px;
+}
+  
+.NavItem__link {
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration: none;
+  
+    &--login {
+      font-weight: bold;
+      color: #ffffff;
+    }
+  
+    &--register {
+      background-color: #ff7757;
+      color: #ffffff;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+}
+  
+.header-user-info {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    margin-left: 20px;
+  
+    .user-image {
+      width: 40px;
+      border-radius: 50%;
+    }
+  
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      z-index: 1000;
+      min-width: 200px;
+  
+      &.active {
+        display: block;
+      }
+    }
+
+    &:hover .dropdown-menu {
+      display: block;
+    }
+}
+
+main {
+    padding-top: 80px;
+}

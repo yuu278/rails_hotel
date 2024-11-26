@@ -1,0 +1,9 @@
+<h2>予約確認</h2>
+
+<p>チェックイン日: <%= @reservation.check_in.strftime('%Y/%m/%d') %></p>
+<p>チェックアウト日: <%= @reservation.check_out.strftime('%Y/%m/%d') %></p>
+<p>宿泊日数: <%= (@reservation.check_out - @reservation.check_in).to_i %>日</p>
+<p>人数: <%= @reservation.guests %>人</p>
+<p>支払い金額: <%= @reservation.total_amount %>円</p>
+
+<%= link_to '予約を確定する', reservations_path(@reservation), method: :post %>

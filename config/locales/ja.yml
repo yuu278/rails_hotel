@@ -1,0 +1,18 @@
+ja:
+  devise:
+    registrations:
+      edit:
+        title: "アカウント編集"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認用）"
+        current_password: "現在のパスワード"
+        update: "更新"
+        cancel_account: "アカウントを削除"
+        cancel_confirmation: "本当に削除しますか？"
+        back: "戻る"
+        password_min_length: "%{length}文字以上必要です"
+        waiting_confirmation: "現在、確認待ちのメールアドレス: %{email}"
+        leave_blank: "変更しない場合は空欄のままにしてください"
+        need_current_password: "変更を確定するために現在のパスワードが必要です"
+        unhappy: "不満ですか？"

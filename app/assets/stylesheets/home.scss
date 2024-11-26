@@ -1,0 +1,19 @@
+.container .RecommendAreas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+  
+.RecommendArea {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    
+}
+  
+.RecommendArea:hover {
+    color: #007bff;
+}

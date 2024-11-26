@@ -1,0 +1,22 @@
+<h1>予約一覧</h1>
+
+<% if @reservations.any? %>
+  <% @reservations.each do |reservation| %>
+    <div class="reservation">
+      <% if reservation.room.image.attached? %>
+        <%= image_tag reservation.room.image, alt: reservation.room.name, class: "room-image" %>
+      <% else %>
+        <%= image_tag "facility_image.png", alt: "デフォルト画像", class: "room-image" %>
+      <% end %>
+
+      <h2><%= link_to reservation.room.name, room_path(reservation.room) %></h2>
+      <p><%= reservation.room.description %></p>
+      <p>合計料金: ¥<%= reservation.total_amount %> /日</p>
+      <p>チェックイン日: <%= reservation.check_in %></p>
+      <p>チェックアウト日: <%= reservation.check_out %></p>
+      <p>予約確定日時: <%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>現在、予約はありません。</p>
+<% end %>

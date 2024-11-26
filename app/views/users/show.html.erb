@@ -1,0 +1,6 @@
+<h1>アカウントページ</h1>
+<p>名前: <%= current_user.name %></p>
+<p>メールアドレス: <%= current_user.email %></p>
+<p>パスワード: *********</p>
+<%= link_to 'アカウント情報を編集', edit_user_path(current_user) %>
+<%= link_to 'プロフィールを編集', edit_profile_path %>
